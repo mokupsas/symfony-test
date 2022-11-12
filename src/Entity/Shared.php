@@ -1,9 +1,10 @@
 <?php
-namespace App;
+
+namespace App\Entity;
 
 class Shared
 {
-    private $name;
+    private $name = 'b';
 
     public function __construct()
     {
