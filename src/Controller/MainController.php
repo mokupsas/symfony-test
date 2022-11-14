@@ -10,10 +10,16 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     // ...
+    private $shared;
 
-    #[Route('/', name: 'index')]
-    public function index(Shared $shared): Response
+    public function __construct(Shared $shared)
     {
-        return $this->render('index.html.twig', ['text' => $shared->getName()]);
+        $this->shared = $shared;
+    } 
+    
+    #[Route('/', name: 'index')]
+    public function index(): Response
+    {
+        return $this->render('index.html.twig', ['text' => $this->shared->getName()]);
     }
 }

@@ -6,9 +6,9 @@ class Shared
 {
     private $name = 'b';
 
-    public function __construct()
+    public function __construct($name = 'default value')
     {
-        $name = 'test value to see';
+        $this->name = $name;
     }
 
     public function getName()
